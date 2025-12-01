@@ -1,4 +1,4 @@
-## Cybersecurity Home Lab Setup and Threat Telemetry Analysis
+<img width="975" height="752" alt="image" src="https://github.com/user-attachments/assets/59b2f652-9203-475e-b71c-d508fcafac37" /><img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/f8f2f1d5-c2bd-4d27-98d0-9a727876d09e" />## Cybersecurity Home Lab Setup and Threat Telemetry Analysis
 
 ### Objective
 
@@ -66,6 +66,12 @@ The objective of this project was to architect and deploy a robust, virtualized 
 3. [Installing 7-Zip](#installing-7-zip)
 4. [Installing Kali Linux VM](#installing-kali-linux-vm)
 5. [Importing Windows 11 ISO to VirtualBox](#importing-windows-11-iso-to-virtualbox)
+6. [Running Windows Without a Microsoft Account](#running-windows-without-a-microsoft-account)
+7. [Import Kali Linux to VirtualBox](#import-kali-linux-to-virtualbox)
+8. [Creating Snapshots to revert to baseline config](#creating-snapshots-to-revert-to-baseline-config)
+9. [Configuring VMs Based On Use Case Scenario](#configuring-vms-based-on-use-case-scenario)
+10. [Scenario #1: Testing Tools That Require Internet Connectivity](#scenario-#1-testing-tools-that-require-internet-connectivity)
+11. [Scenario #2: Analyzing Malware Recommended Settings](#scenario-#2:-analyzing-malware-recommended-settings)
 
 #### Installing VirtualBox
 Step 1: Head to https://www.virtualbox.org/wiki/Downloads and click download. 
@@ -167,15 +173,81 @@ Step 6.7: Try installing Windows 11 Pro again
 <img width="975" height="773" alt="image" src="https://github.com/user-attachments/assets/60dd8463-e50f-4c83-b5af-843c4ebaa921" />
 <img width="975" height="813" alt="image" src="https://github.com/user-attachments/assets/890efd47-6b7f-4cdd-9fe5-03da76271d35" />
 #### Running Windows Without a Microsoft Account
+Step 1 After you reach this screen unplug network connection 
+<img width="975" height="867" alt="image" src="https://github.com/user-attachments/assets/fc844667-1c28-44bb-bba5-f221bf789722" />
+Step 2 on bottom right > Right Click Network Icon > Network Settings 
+<img width="975" height="848" alt="image" src="https://github.com/user-attachments/assets/44512fcb-dc48-4e1f-9253-70b00b55e1bb" />
+Step 3: Attach to from “Nat” to “Not Attached”  
+<img width="975" height="677" alt="image" src="https://github.com/user-attachments/assets/07ffa0c7-85e3-4d65-b158-fdf937301dbe" />
+Step 4: Restart VM and go back to Setup page
+<img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/56820fdd-a82e-4282-baa0-856c522051ea" />
+<img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/da1fba70-fb4e-4d8d-a7a5-734fc99ee755" />
+<img width="975" height="810" alt="image" src="https://github.com/user-attachments/assets/ff053dad-3843-49aa-87de-73077f2d1135" />
+<img width="975" height="819" alt="image" src="https://github.com/user-attachments/assets/333da4ea-ec6f-43a4-b79b-9db2d3fd15a5" />
+<img width="975" height="821" alt="image" src="https://github.com/user-attachments/assets/5c291928-e49f-4bec-972f-9379950b7e84" />
+<img width="965" height="808" alt="image" src="https://github.com/user-attachments/assets/b15f1d46-ddbd-4ee9-8601-aeeba65630d7" />
+<img width="975" height="831" alt="image" src="https://github.com/user-attachments/assets/02194205-f806-4e4e-b95f-a7167a54f460" />
+<img width="975" height="823" alt="image" src="https://github.com/user-attachments/assets/6bb1ce3b-1903-4b0b-9d8a-286eac43c8e4" />
+<img width="975" height="827" alt="image" src="https://github.com/user-attachments/assets/00a75fc3-1458-4e90-8301-31727946d6dc" />
+<img width="975" height="808" alt="image" src="https://github.com/user-attachments/assets/087a72f0-5bbd-4a6f-be88-288ff52ef919" />
+<img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/6f9a13ef-8cc9-4b6b-b59c-2401504000b7" />
 
+#### Import Kali Linux to VirtualBox
+Step 1: Navigate to the folder where you extracted the Kali Linux zip 
+<img width="975" height="392" alt="image" src="https://github.com/user-attachments/assets/6f02f73b-2d98-408d-ade2-432e32384fef" />
 
+Step 2: Double  click on the folder  Double click the “.vbox” extension 
+<img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/50cd27d7-4210-4f32-a5b1-8fee9cd7ee8a" />
 
+Step 3: VirtualBox opens up automatically and puts in Kali Linux for you 
+<img width="975" height="827" alt="image" src="https://github.com/user-attachments/assets/db5fee4d-0a34-4f0e-ab71-5550b220b49b" />
 
+Step 4 : Power on Kali Linux VM Step 5: User = kali pw = kali  
+<img width="975" height="863" alt="image" src="https://github.com/user-attachments/assets/529034d9-bc26-4ba6-a1dc-3b0fcd55ca80" />
+Step 5: User = kali pw = kali
+<img width="975" height="790" alt="image" src="https://github.com/user-attachments/assets/efd93596-ef11-41d5-b34f-f71227749c1e" />
+<img width="975" height="829" alt="image" src="https://github.com/user-attachments/assets/6a7fb6ae-9dfc-4384-85a2-00f78c949b81" />
 
+#### Creating Snapshots to revert to baseline config
+Step 1: Click on intended VM > Snapshots > on top right, click take  
+<img width="975" height="769" alt="image" src="https://github.com/user-attachments/assets/fb303237-18a0-4b45-a5a0-8d46b77c18c7" />
 
+Step 2: Name the snapshot to your preference    
+<img width="742" height="579" alt="image" src="https://github.com/user-attachments/assets/ab3b562e-57ad-4a95-b46f-339cbe683dee" />
+<img width="975" height="765" alt="image" src="https://github.com/user-attachments/assets/cf1347ff-35d4-4492-9e8b-9f11bf9e28a4" />
 
+### Configuring VMs Based On Use Case Scenario
+Step 1: Before we start configuring our VMs we must know what each network settings on VirtualBox do so we know which one to use based on any lab scenario you might test.  
+ 
+NAT: Default mode; VM accesses the internet through the host (safe, isolated).
+<img width="975" height="704" alt="image" src="https://github.com/user-attachments/assets/d656bf36-a140-43a3-a253-c4cb8289749b" />
 
+Bridged Adapter: VM appears as a device on the same network as the host.  
+<img width="975" height="679" alt="image" src="https://github.com/user-attachments/assets/219c2e35-5fad-4692-b942-e01a8f0b0cd3" />
 
+Internal Network: VMs can communicate only with each other (no host or internet access).  
+<img width="975" height="733" alt="image" src="https://github.com/user-attachments/assets/e5990364-2895-4cfd-8cbc-beb0760f2462" />
+
+Host-only Adapter: VM communicates only with the host machine and other host-only VMs.  
+<img width="975" height="723" alt="image" src="https://github.com/user-attachments/assets/f2c583a7-0a83-4eeb-91cc-5eea32681c6c" />
+
+Generic Driver: Advanced/custom networking via external drivers.
+
+NAT Network: Similar to NAT but allows multiple VMs on the same internal NATed subnet.  
+<img width="975" height="735" alt="image" src="https://github.com/user-attachments/assets/a3a5b17e-cf06-4767-a326-7e17bc66ac71" />
+
+Cloud Network (Experimental): Connects VM to cloud-based virtual networks (testing feature).
+Not Attached: No network connection; VM sees no network hardware.  
+<img width="975" height="752" alt="image" src="https://github.com/user-attachments/assets/5800bf95-03b2-4c7d-9a25-6e0634ff2ee7" />
+
+#### Scenario 1: Testing Tools That Require Internet Connectivity
+Step 1: This is simple. Use NAT and default settings for you Win11 Pro and Kali Linux VM in VirtualBox.    
+<img width="975" height="765" alt="image" src="https://github.com/user-attachments/assets/ebded70a-6a7c-44c5-a365-131e71ba8ccd" />
+<img width="975" height="642" alt="image" src="https://github.com/user-attachments/assets/233c0990-cd5c-405f-8f98-1ad5cddb9fd5" />
+<img width="975" height="652" alt="image" src="https://github.com/user-attachments/assets/4ae0faa7-1525-416d-ab34-b330af96d008" />
+Step 2: Repeat the same step into Kali Linux VM to “NAT”. It should be NAT already by default.
+
+#### Scenario #2: Analyzing Malware Recommended Settings
 
 
 
