@@ -8,6 +8,8 @@ The objective of this project was to architect and deploy a robust, virtualized 
 * Deploying an advanced logging agent (**Sysmon**) and a **Security Information and Event Management (SIEM)** platform (**Splunk**) to collect high-fidelity security telemetry.
 * Simulating basic attacker Tactics, Techniques, and Procedures (**TTPs**) to generate relevant log data and practice **analyzing the full attack chain** within the SIEM environment.
 
+---
+
 ### Skills Learned
 
 **I. Infrastructure & Systems Administration:**
@@ -30,6 +32,8 @@ The objective of this project was to architect and deploy a robust, virtualized 
 * **Reconnaissance:** Employed **nmap** for basic network service identification and port scanning against the target system.
 * **Exploitation Tooling:** Utilized **msfvenom** to generate a reverse TCP shell payload and **Metasploit Framework (msfconsole)** to set up a listening handler to catch the shell.
 * **Delivery Simulation:** Used a **Python HTTP server** to simulate a basic delivery mechanism for the malware payload.
+
+---
 
 ### Tools Used
 
@@ -54,14 +58,16 @@ The objective of this project was to architect and deploy a robust, virtualized 
 * **7-Zip** (File Archiving)
 * **Python 3** (`http.server` module)
 
+---
+
 ### Network Architecture Diagram
 <img width="975" height="413" alt="image" src="https://github.com/user-attachments/assets/f02ac034-e5a0-4291-92e1-eb2544aa6c44" />
 
-### Key Results
-**Suspicious Network Activity** 
-![Malware Network Telemetry](docs/screenshots/splunk-network-telemetry.png)
-**Analysis:**
+---
 
+### Key Results
+**Suspicious Network Activity**
+![Malware Network Telemetry](docs/screenshots/splunk-network-telemetry.png)
 - IP address `192.168.20.11` attempts to reach port **4444**, which is commonly used for Metasploit reverse shells or C2 channels.  
 - Actions to take:  
   1. Verify the source system.  
@@ -79,14 +85,22 @@ The objective of this project was to architect and deploy a robust, virtualized 
 - Command line arguments (`WerFault.exe -u -p 1052 -s 432`) are normal for Windows Error Reporting, but the context indicates malware activity.  
 - **Conclusion:** `resume.pdf.exe` is malware attempting to execute and blend in with normal system processes.
 
+---
+
 ### Full Walkthrough
 
 For the complete step-by-step guide (including all screenshots), see:
 [Full Walkthrough Documentation](docs/full-walkthrough.md)
 
+---
+
 ### Future Improvements
 
+---
+
 ### Conclusion
+
+
 
 #### Directory 
 
