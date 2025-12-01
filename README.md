@@ -1,4 +1,4 @@
-<img width="975" height="752" alt="image" src="https://github.com/user-attachments/assets/59b2f652-9203-475e-b71c-d508fcafac37" /><img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/f8f2f1d5-c2bd-4d27-98d0-9a727876d09e" />## Cybersecurity Home Lab Setup and Threat Telemetry Analysis
+## Cybersecurity Home Lab Setup and Threat Telemetry Analysis
 
 ### Objective
 
