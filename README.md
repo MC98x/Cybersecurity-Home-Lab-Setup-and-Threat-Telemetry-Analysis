@@ -58,6 +58,13 @@ The objective of this project was to architect and deploy a robust, virtualized 
 <img width="975" height="413" alt="image" src="https://github.com/user-attachments/assets/f02ac034-e5a0-4291-92e1-eb2544aa6c44" />
 
 ### Key Results
+**Telemetry 1** 
+<img width="975" height="908" alt="image" src="https://github.com/user-attachments/assets/cf633dce-c83d-4f1f-b41d-96f564dbbc18" />
+This telemetry indicates that IP address 192.168.20.11 is attempting to reach port 4444. Port 4444 is commonly used by Metasploit default payloads and other malware/command-and-control channels. For security context, if a machine attempts to reach port 4444, it may indicate an attempted reverse shell or remote exploitation attempt. The necessary actions to take next are to verify the source, check the system for malware, set up firewall rules to block port 4444 if it's not intended, and monitor network logs.
+
+**Telemetry 2**
+<img width="975" height="773" alt="image" src="https://github.com/user-attachments/assets/07911baf-aa3f-4470-82f9-71b707a51df3" />
+Let's analyze the ParentImage, Image, and CommandLine. The parent process “resume.pdf.exe” is suspicious because PDFs are never .exe files. We can conclude that this is malware disguised as a PDF file. It was located in the downloads folder, which is common for malicious payloads. The child process “WerFault.exe” is a legitimate Windows error reporting executable. However, it is suspicious because “resume.pdf.exe” spawned “WerFault.exe,” which is not normal behavior. WerFault is usually triggered when covering up a crash it caused, running malicious code before or after a crash, and blending in with normal system processes. Command line arguments “WerFault.exe -u -p 1052 s 432” are legitimate because Windows Error Reporting launches like this when a process crashes. In summary, the malware “resume.pdf.exe” crashed, and WerFault was triggered to report the issue.
 
 ### Full Walkthrough
 
