@@ -62,6 +62,7 @@ The objective of this project was to architect and deploy a robust, virtualized 
 #### Directory 
 
 1. [Installing VirtualBox](#installing-virtualbox)
+2. [Installing Windows ISO Image](#installing-windows-iso-image)
 
 #### Installing VirtualBox
 Step 1: Head to https://www.virtualbox.org/wiki/Downloads and click download. 
@@ -98,7 +99,7 @@ Step 3: Initialize installation.
 <img width="763" height="623" alt="image" src="https://github.com/user-attachments/assets/3dc30d93-e60b-494e-b9d1-e113f12c450d" />
 <img width="767" height="617" alt="image" src="https://github.com/user-attachments/assets/5a089bcf-9387-4acf-bbad-c9db8776268c" />
 
-
+#### Installing Windows ISO Image
 
 
 
