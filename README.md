@@ -128,7 +128,45 @@ Step 2: Once installed right click installed file, more options > 7zip, Extract 
 <img width="867" height="554" alt="image" src="https://github.com/user-attachments/assets/1097f040-48e4-4cd4-8dcf-428bd84e4447" />
 
 #### Importing Windows 11 ISO to VirtualBox
-
+Step 1: Run VirtualBox
+Step 2: Click New  
+<img width="975" height="767" alt="image" src="https://github.com/user-attachments/assets/37fef640-7a45-481a-a892-ca3bfdcbb8fc" />
+Step 3: Name VM whatever you want, Pick a Folder location to Place it In, ISO Image = “Windows.ISO” that we created earlier  
+<img width="975" height="496" alt="image" src="https://github.com/user-attachments/assets/413d3cc1-20eb-4817-9b05-1e01c7960040" />
+Step 4: Allocate Necessary system resources, Base Memory = 4096mb, CPU = 1, Disk Size = 20Gb    
+<img width="975" height="513" alt="image" src="https://github.com/user-attachments/assets/5dc8d3d2-dfe5-4da0-8ec5-988cfb652af5" />
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/51610c74-3798-4976-95c1-11394a4ee77c" />
+Step 5: Power on Win 11 VM  
+<img width="975" height="765" alt="image" src="https://github.com/user-attachments/assets/b7ef1b40-9fc6-4527-b554-d250ffd092b0" />
+Step 6: Initialize Windows 11 Installer
+<img width="975" height="790" alt="image" src="https://github.com/user-attachments/assets/2523d1a6-2121-49c9-8e37-d6c77e36f7df" />
+<img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/3c132ee5-d39b-435f-ada4-2380debc2c75" />
+<img width="975" height="823" alt="image" src="https://github.com/user-attachments/assets/d2bcfcbc-4a4d-4983-8c66-108004abf530" />
+<img width="975" height="821" alt="image" src="https://github.com/user-attachments/assets/9edf9877-9612-467d-ba25-7ee1a7b11c7c" />
+<img width="975" height="821" alt="image" src="https://github.com/user-attachments/assets/58ec67ae-d5bd-4cc5-bd1e-63880fee7d80" />
+<img width="975" height="821" alt="image" src="https://github.com/user-attachments/assets/1188c752-61bc-49f2-81cd-c8b6c6194418" />
+<img width="975" height="810" alt="image" src="https://github.com/user-attachments/assets/eef81466-6bec-4f9d-9f0f-c96776e8e452" />
+Step 6.1: If you get this screen we have to bypass requirements safely via a VM
+Step 6.2: press Shift + F10 > Type “regedit”  
+<img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/214aaba4-bef1-4bab-84dd-471832547fe1" />
+Step 6.3: Navigate to HKEY_LOCAL_MACHINE\SYSTEM\Setup 
+<img width="975" height="815" alt="image" src="https://github.com/user-attachments/assets/3ce17dea-13c7-4d5d-8539-7dd760e80cd3" />
+Step 6.4: Right Click “Setup” Folder > New  > Key > Name = “LabConfig”  
+<img width="975" height="819" alt="image" src="https://github.com/user-attachments/assets/c6620e0b-f1e6-4e0f-ab68-7150f4d215c7" />
+Step 6.5: On the right > Right click > new > Create 4 DWORD (32-bit) Value 
+<img width="975" height="917" alt="image" src="https://github.com/user-attachments/assets/e685d482-bbbf-4d3d-be97-42f07e9a5506" />
+Step 6.6: Name them BypassTPMCheck = 1, BypassRAMCheck = 1, BypassSecureBootCheck = 1, BypassCPUCheck = 1   
+<img width="975" height="817" alt="image" src="https://github.com/user-attachments/assets/2338daab-0a54-4bf2-bf68-a36d86b9484d" />
+<img width="975" height="960" alt="image" src="https://github.com/user-attachments/assets/5f8e5abc-592e-47e5-9721-24b2494428ec" />
+<img width="975" height="827" alt="image" src="https://github.com/user-attachments/assets/7beb6b74-c201-4afc-9677-f826547d5cdf" />
+<img width="975" height="819" alt="image" src="https://github.com/user-attachments/assets/ca00e09f-c783-4c34-b836-52fbe5373c69" />
+<img width="975" height="819" alt="image" src="https://github.com/user-attachments/assets/974ef8f1-f814-47e5-be14-243b41f0d884" />
+Step 6.7: Try installing Windows 11 Pro again    
+<img width="975" height="779" alt="image" src="https://github.com/user-attachments/assets/917b1298-07dd-4909-8926-d4be40264708" />
+<img width="975" height="746" alt="image" src="https://github.com/user-attachments/assets/1ad0b2f5-cb03-46d4-b493-de579747c24b" />
+<img width="975" height="773" alt="image" src="https://github.com/user-attachments/assets/60dd8463-e50f-4c83-b5af-843c4ebaa921" />
+<img width="975" height="813" alt="image" src="https://github.com/user-attachments/assets/890efd47-6b7f-4cdd-9fe5-03da76271d35" />
+#### Running Windows Without a Microsoft Account
 
 
 
