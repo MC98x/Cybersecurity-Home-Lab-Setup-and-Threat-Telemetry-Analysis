@@ -71,7 +71,7 @@ The objective of this project was to architect and deploy a robust, virtualized 
 8. [Creating Snapshots to revert to baseline config](#creating-snapshots-to-revert-to-baseline-config)
 9. [Configuring VMs Based On Use Case Scenario](#configuring-vms-based-on-use-case-scenario)
 10. [Scenario 1: Testing Tools That Require Internet Connectivity](#scenario-1-testing-tools-that-require-internet-connectivity)
-11. [Scenario 2: Analyzing Malware Recommended Settings](#scenario-2:-analyzing-malware-recommended-settings)
+11. [Scenario 2: Analyzing Malware Recommended Settings](#scenario-2-analyzing-malware-recommended-settings)
 
 #### Installing VirtualBox
 Step 1: Head to https://www.virtualbox.org/wiki/Downloads and click download. 
