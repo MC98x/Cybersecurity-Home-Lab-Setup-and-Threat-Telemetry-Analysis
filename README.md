@@ -59,7 +59,10 @@ The objective of this project was to architect and deploy a robust, virtualized 
 
 ### Key Results
 
-### Link to Full Walkthrough (docs/Full-Walkthrough.md) 
+### Full Walkthrough
+
+For the complete step-by-step guide (including all screenshots), see:
+[Full Walkthrough Documentation](docs/full-walkthrough.md)
 
 ### Future Improvements
 
