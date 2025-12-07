@@ -85,13 +85,6 @@ The objective of this project was to architect and deploy a robust, virtualized 
 
 ---
 
-### Full Walkthrough
-
-For the complete step-by-step guide (including all screenshots), see:
-[Full Walkthrough Documentation](docs/full-walkthrough.md)
-
----
-
 ### Future Improvements
 To expand the scope of this lab and transition it into a more realistic representation of an enterprise monitoring environment, the following improvements are planned:
 
@@ -123,3 +116,9 @@ This project successfully achieved its core objective: deploying a fully isolate
 * **Critical Thinking & Anomaly Detection:** The analysis went beyond simple alert confirmation. It identified the **anomalous behavior** of the malicious `resume.pdf.exe` spawning the legitimate **`WerFault.exe`** (Windows Error Reporting). This demonstrated the ability to detect subtle **Indicators of Compromise (IOCs)** and understand common attacker techniques (e.g., using a crash to obscure execution), a core competency for SOC Analysts.
 * **Systems and Network Hardening:** Established a secure, segmented lab environment (192.168.20.0/24), showcasing practical systems administration and network isolation skills crucial for safe, repeatable threat testing.
 
+---
+
+### Resources and Documentations
+
+For the complete step-by-step guide (including all screenshots), see:
+[Full Walkthrough Documentation](docs/full-walkthrough.md)
