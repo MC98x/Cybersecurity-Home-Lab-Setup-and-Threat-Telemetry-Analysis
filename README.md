@@ -61,7 +61,7 @@ The objective of this project was to architect and deploy a robust, virtualized 
 ---
 
 ### Network Architecture Diagram
-<img width="975" height="413" alt="image" src="https://github.com/user-attachments/assets/f02ac034-e5a0-4291-92e1-eb2544aa6c44" />
+![Project Diagram](docs/screenshots/Cybersecurity-Home-Lab-Setup-and-Threat-Telemetry-Analysis-drawio.png)
 
 ---
 
